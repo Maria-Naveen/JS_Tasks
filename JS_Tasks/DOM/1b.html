@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1b</title>
+</head>
+<body>
+    <div class="myClass">Welcome User.</div>
+    <div class="myClass">Nice to meet you!</div>
+    <script>
+        const classContent = document.getElementsByClassName('myClass');
+        for(let i=0;i<classContent.length;i++){
+            console.log(classContent[i].textContent)
+        }
+    </script>
+</body>
+</html>

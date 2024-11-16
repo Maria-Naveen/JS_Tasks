@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Click</title>
+    <style>
+        .change{
+            background-color: red;
+        }
+        .box{
+            border: 1px solid black;
+            width: 75px;
+            height: 75px;
+            margin: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="one"></div>
+    <div class="box" id="two"></div>
+    <div class="box" id="three"></div>
+    <script>
+        const one = document.querySelector("#one");
+        const two = document.querySelector("#two");
+        const three = document.querySelector("#three");
+        one.addEventListener('click',()=>{
+            one.classList.toggle('change');
+        })
+        two.addEventListener('click',()=>{
+            two.classList.toggle('change');
+        })
+        three.addEventListener('click',()=>{
+            three.classList.toggle('change');
+        })
+    </script>
+</body>
+</html>

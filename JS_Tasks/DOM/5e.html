@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Buttons</title>
+    <style>
+        button{
+            width: 7em;
+            margin: 0 auto;
+            padding: 1em;
+            color: white;
+        }
+        #red{
+            background-color: red;
+        }
+        #green{
+            background-color: green;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #yellow{
+            background-color: yellow;
+            color: black;
+        }
+        #box{
+            width: 75px;
+            height: 75px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="red">Red</button>
+    <button id="green">Green</button>
+    <button id="blue">Blue</button>
+    <button id="yellow">Yellow</button>
+    <script>
+        const box = document.getElementById('box');
+        const rbtn = document.getElementById('red');
+        const gbtn = document.getElementById('green');
+        const bbtn = document.getElementById('blue');
+        const ybtn = document.getElementById('yellow');
+        rbtn.addEventListener('click',()=>{
+            box.style.backgroundColor = 'red';
+        })
+        gbtn.addEventListener('click',()=>{
+            box.style.backgroundColor = 'green';
+        })
+        bbtn.addEventListener('click',()=>{
+            box.style.backgroundColor = 'blue';
+        })
+        ybtn.addEventListener('click',()=>{
+            box.style.backgroundColor = 'yellow';
+        })
+    </script>
+</body>
+</html>

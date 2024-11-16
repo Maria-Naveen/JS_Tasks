@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseOver Event</title>
+</head>
+<body>
+    <p id="music">I love music!</p>
+    <p id="fact">There are 6 million blood vessels in human body.</p>
+    <p id="panda">Skadoosh!</p>
+    <script>
+        const music = document.querySelector('#music');
+        const fact = document.querySelector('#fact');
+        const panda = document.querySelector('#panda');
+        music.addEventListener('mouseover',()=>{
+            music.style.color = 'red';
+        })
+        music.addEventListener('mouseout',()=>{
+            music.style.color = 'black';
+        })
+        fact.addEventListener('mouseover',()=>{
+            fact.style.color = 'red';
+        })
+        fact.addEventListener('mouseout',()=>{
+            fact.style.color = 'black';
+        })
+        panda.addEventListener('mouseover',()=>{
+            panda.style.color = 'red';
+        })
+        panda.addEventListener('mouseout',()=>{
+            panda.style.color = 'black';
+        })
+    </script>
+</body>
+</html>

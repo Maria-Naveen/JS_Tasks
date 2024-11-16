@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basic Form</title>
+    </head>
+    <body>
+        <form id="form">
+            <input type="text">
+            <button id="btn">Submit</button>
+        </form>
+        <script>
+            const form = document.getElementById('form');
+            const btn = document.getElementById('btn');
+            form.addEventListener('submit',()=>{
+                console.log('Form submitted!');
+            })
+        </script>
+    </body>
+</html>

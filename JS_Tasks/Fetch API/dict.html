@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .box{
+            width: 60%;
+            height: 80vh;
+            background-color: aquamarine;
+        }
+        .search{
+            width:100%;
+            height: 2em;
+            display: flex;
+            gap: 2em;
+            margin: 20px;
+            align-items: center;  
+            justify-content: center; 
+        }
+        .search #word{
+            padding: 2px;
+            font-size: medium;
+        }
+        .res{
+            border: 1px solid black;
+            height: 68%;
+            margin: 4em;
+        }
+        .res p {
+            padding: 14px;
+            margin: 3px;
+        }
+        #find{
+            height: 2em;
+            width: 4em;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        #find:hover{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="search">
+            <input type="text" id="word">
+            <button id="find">Find</button>
+        </div>
+        <div class="res">
+            <p id="phonetic"></p>
+            <p id="part"></p>
+            <p id="definition"></p>
+        </div>
+    </div>
+    <script>
+        const word = document.getElementById('word')
+        const phonetic = document.getElementById('phonetic')
+        const part = document.querySelector('#part')
+        const definition = document.querySelector('#definition')
+        const find = document.getElementById('find')
+        find.addEventListener('click',()=>{
+            fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word.value}`)
+            .then(response => {
+                if(!response.ok){
+                    phonetic.textContent = "Sorry can't find this word!";
+                    part.textContent=""
+                    definition.textContent=""
+                }
+                return response.json()
+            })
+            .then(data =>{
+                phonetic.textContent = data[0].phonetic
+                part.textContent = data[0].meanings[0].partOfSpeech;
+                definition.textContent = data[0].meanings[0].definitions[0].definition;
+            })
+            .catch(error => console.log(error))
+        })
+        
+    </script>
+</body>
+</html>

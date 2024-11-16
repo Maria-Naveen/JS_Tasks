@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2a</title>
+    </head>
+    <body>
+        <ul id="fruits">
+            <li>Apple</li>
+            <li>Orange</li>
+        </ul>
+    </body>
+    <script>
+        const fruits = document.querySelector('#fruits');
+        const newitem = document.createElement('li');
+        const content = document.createTextNode('New Item');
+        newitem.appendChild(content)
+        fruits.appendChild(newitem)
+    </script>
+</html>

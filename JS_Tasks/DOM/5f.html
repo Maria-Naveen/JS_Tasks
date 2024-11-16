@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Buttons</title>
+    <style>
+        #data{
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <div id="data">Maria Naveen</div>
+    <button id="small">Small</button>
+    <button id="medium">Medium</button>
+    <button id="large">Large</button>
+    <button id="larger">Xtra Large</button>
+    <script>
+        const data = document.querySelector('#data');
+        const sbtn = document.getElementById('small');
+        const mbtn = document.getElementById('medium');
+        const lbtn = document.getElementById('large');
+        const xbtn = document.getElementById('larger');
+        sbtn.addEventListener('click',()=>{
+            data.style.fontSize = 'small';
+        })
+        mbtn.addEventListener('click',()=>{
+            data.style.fontSize = 'medium';
+        })
+        lbtn.addEventListener('click',()=>{
+            data.style.fontSize = 'large';
+        })
+        xbtn.addEventListener('click',()=>{
+            data.style.fontSize = 'larger';
+        })
+    </script>
+</body>
+</html>
